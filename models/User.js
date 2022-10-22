@@ -22,7 +22,7 @@ const UserSchema = new Schema(
         message: "Please enter a valid email address",
       },
     },
-    thoughs: [
+    thoughts: [
       {
         type: Schema.Types.ObjectId,
         ref: "Thought",
