@@ -18,7 +18,7 @@ const userController = {
 
   //   get users by Id
 
-  getUserbyId({ params }, res) {
+  getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
         path: "thoughts",
