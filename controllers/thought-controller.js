@@ -52,4 +52,22 @@ const ThoughtController = {
       .catch((err) => res.json(err));
   },
   // remove thought
+  removeThought({ params }, res) {
+    Thought.findOneAndDelete({ _id: params.thoughtId })
+      .then((deletedthought) => {
+        if (!deletedthought) {
+          return res.status(404).json({ message: "No thought with this id!" });
+        }
+        return User.findOneAndUpdate(
+          { _id: params.username },
+          { $pull: { thoughts: params.thoughtId } },
+          { new: true }
+        );
+      })
+      .then((dbUserData) => {
+        res.json(dbUserData);
+      })
+      .catch((err) => res.json(err));
+  },
+  // add reaction to user by ID
 };
