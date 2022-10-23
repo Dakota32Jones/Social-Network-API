@@ -20,11 +20,12 @@ const thoughtSchema = new Schema(
       default: Date.now(),
       get: (createdAtVal) => dateFormat(createdAtVal),
     },
-    reactions: [reactionSchema.schema],
+    reactions: [reactionSchema],
   },
   {
     toJson: {
       virtuals: true,
+      getters: true,
     },
     id: false,
   }
