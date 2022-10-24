@@ -1,4 +1,4 @@
-const { Thought, User, Types } = require("../models");
+const { Thought, User, Reaction } = require("../models");
 
 // get all thoughts
 const ThoughtController = {
@@ -51,6 +51,23 @@ const ThoughtController = {
       })
       .catch((err) => res.json(err));
   },
+  // update a thought
+  updateThought({ params, body }, res) {
+    Thought.findOneAndUpdate({ _id: params.thoughtId }, body, {
+      new: true,
+    })
+      .then((dbUserData) => {
+        if (!dbUserData) {
+          res
+            .status(404)
+            .json({ message: "Sorry there is no user found with this Id" });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch((err) => res.status(400).json(err));
+  },
+
   // remove thought
   removeThought({ params }, res) {
     Thought.findOneAndDelete({ _id: params.thoughtId })
@@ -93,7 +110,7 @@ const ThoughtController = {
       { $pull: { reactions: { reactionId: params.reactionId } } },
       { new: true }
     )
-      .then((dbUserData) => res.json(dbUserData))
+      .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => res.json(err));
   },
 };
