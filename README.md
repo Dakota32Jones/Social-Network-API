@@ -21,13 +21,14 @@ next use npm run start to start the app and connect to the localhost.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+A link showing you how to search for the data points in insomnia will be linked below.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+How to install the application [application](https://drive.google.com/file/d/1ZGIU6umKXy7MAPLo0Ccn0bEnVDMDd2Qx/view?usp=sharing)
+How to get Users [Users](https://drive.google.com/file/d/1Tkj7mIxDm__QZRhA484QhSJ6Dj_cAP47/view?usp=sharing)
+How to get thoughts and reactions [reactions](https://drive.google.com/file/d/1QZfsqZLVKK7ybjxpmQIH41TDvrGGBYYw/view?usp=sharing)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![getting a thought](./assets/images/Getting%20a%20thought.png)
+![getting all thoughts](./assets/images/Getting%20all%20thoughts.png)
 
 ## Credits
 
